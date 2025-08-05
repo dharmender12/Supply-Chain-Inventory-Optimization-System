@@ -126,3 +126,53 @@ SELECT
 FROM rolling_stats
 ORDER BY shipment_date;
 
+
+### Add column Supplier 
+ALTER TABLE Train ADD COLUMN Supplier VARCHAR(10);
+UPDATE Train
+SET Supplier = CONCAT('S', FLOOR(1 + RAND() * 5));
+
+
+## Key Business Queries to Solve
+### 1. Which suppliers consistently miss delivery deadlines? Show % on-time delivery.
+
+select 
+	Supplier,
+    count(*) as Total_shipment,
+	sum(case when `Reached.on.Time_Y.N`= 1 then 1 else 0 end ) as on_time_delivery,
+    sum(case when `Reached.on.Time_Y.N` = 1 then 1 else 0 end) * 100 / count(*) as on_time_percent
+from Train
+group by Supplier 
+order by on_time_percent;    
+
+select * from Train;
+
+
+## 2. Identify top 5 slowest-moving SKUs in each category over the last 90 days.
+
+WITH last_90_days AS (
+    SELECT * 
+    FROM Train 
+    WHERE shipment_date >= DATE_SUB(CURDATE(), INTERVAL 90 DAY)
+),
+sku_sales AS (
+    SELECT 
+        *,
+        SUM(Prior_purchases) AS total_sales
+    FROM last_90_days
+    GROUP BY ID, Product_importance
+),
+ranked_skus AS (
+    SELECT 
+        *,
+        RANK() OVER (
+            PARTITION BY Product_importance 
+            ORDER BY total_sales ASC
+        ) AS rank_in_category
+    FROM sku_sales
+)
+SELECT * 
+FROM ranked_skus
+WHERE rank_in_category <= 5
+ORDER BY Product_importance, rank_in_category;
+
