@@ -10,7 +10,7 @@ This SQL-driven analysis is part of a larger supply chain optimization system fo
 
 - **MySQL** – Core database engine for querying and analysis  
 - **Python** – Used for preprocessing and data preparation  
-- **Power BI** – For downstream visualizations (not covered in this module)  
+- **Power BI** – For downstream visualizations 
 
 ---
 
