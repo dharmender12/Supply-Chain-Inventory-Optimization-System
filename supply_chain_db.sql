@@ -157,10 +157,11 @@ WITH last_90_days AS (
 ),
 sku_sales AS (
     SELECT 
-        *,
+        
+        Product_importance,
         SUM(Prior_purchases) AS total_sales
     FROM last_90_days
-    GROUP BY ID, Product_importance
+    GROUP BY Product_importance
 ),
 ranked_skus AS (
     SELECT 
@@ -175,4 +176,40 @@ SELECT *
 FROM ranked_skus
 WHERE rank_in_category <= 5
 ORDER BY Product_importance, rank_in_category;
+
+### 3. Calculate inventory turnover ratio per warehouse monthly using window functions.
+
+show columns from  Train;
+
+WITH inventory_turnover AS ( 
+    SELECT 
+        Warehouse_block,
+        DATE_FORMAT(shipment_date, '%Y-%m') AS `year_month`,
+        SUM(Prior_purchases) AS total_sales,
+        AVG(Cost_of_the_Product) AS avg_inventory,
+        ROUND(SUM(Prior_purchases) / NULLIF(AVG(Cost_of_the_Product), 0), 2) AS turnover_ratio
+    FROM Train
+    GROUP BY Warehouse_block, `year_month`
+),
+turnover_with_rank AS (
+    SELECT 
+        *,
+        RANK() OVER (
+            PARTITION BY Warehouse_block 
+            ORDER BY `year_month` ASC
+        ) AS month_rank
+    FROM inventory_turnover
+)
+SELECT * 
+FROM turnover_with_rank
+ORDER BY Warehouse_block, `year_month`;
+
+
+### 4. Which products are at risk of stock-out in the next 7 days, based on historical demand?
+
+ALTER TABLE Train ADD COLUMN current_stock INT;
+
+UPDATE Train SET current_stock = FLOOR(30 + RAND() * 70);  -- between 30 and 100
+
+## query : 
 
