@@ -50,4 +50,10 @@ This SQL-driven analysis is part of a larger supply chain optimization system fo
 4. 🚨 Detect products at **stock-out risk** in the next 7 days (based on sales trends)
 5. 📉 30-day **rolling sales & returns report** per product
 6. 🔄 Segment customers who **frequently cancel or return** products
-7. 📦 **Restocking recommendation engine** using:
+7. 📦 **Restocking recommendation engine** 
+
+
+
+
+
+
