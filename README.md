@@ -42,6 +42,7 @@ This SQL-driven analysis is part of a larger supply chain optimization system fo
 
 ---
 
+
 ## 📊 Key Business Queries Implemented
 
 1. 🕒 Identify suppliers with low on-time delivery performance (% on-time shipments)
