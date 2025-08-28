@@ -13,6 +13,7 @@ This SQL-driven analysis is part of a larger supply chain optimization system fo
 - **Power BI** – For downstream visualizations 
 
 ---
+
 ## 🎯 Business Goals
 
 - Identify **fast- and slow-moving products** using sales patterns  
