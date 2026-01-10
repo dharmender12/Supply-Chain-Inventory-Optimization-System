@@ -6,7 +6,6 @@ This SQL-driven analysis is part of a larger supply chain optimization system fo
 
 ---
 
-
 ## 🛠 Tools & Technologies
 
 - **MySQL** – Core database engine for querying and analysis  
