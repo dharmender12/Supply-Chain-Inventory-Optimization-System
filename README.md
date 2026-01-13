@@ -16,7 +16,7 @@ This SQL-driven analysis is part of a larger supply chain optimization system fo
 ---
 
 ## 🎯 Business Goals
-
+---
 - Identify **fast- and slow-moving products** using sales patterns  
 - Detect **late shipments** by product, supplier, and region  
 - Forecast **stock-out risks** and estimate inventory turnover  
