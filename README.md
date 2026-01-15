@@ -4,6 +4,7 @@
 
 This SQL-driven analysis is part of a larger supply chain optimization system for a global logistics company. The objective is to derive actionable insights from structured data to improve **inventory management**, **restocking efficiency**, and **delivery performance**.
 
+
 ---
 
 ## 🛠 Tools & Technologies
