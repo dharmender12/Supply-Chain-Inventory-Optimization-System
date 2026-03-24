@@ -1,59 +1,134 @@
-# 📦 Supply Chain & Inventory Optimization System – SQL Module
+# 📦 Supply Chain & Inventory Optimization System
 
 ## 🧠 Project Overview
 
-This SQL-driven analysis is part of a larger supply chain optimization system for a global logistics company. The objective is to derive actionable insights from structured data to improve **inventory management**, **restocking efficiency**, and **delivery performance**.
+This project analyzes a global supply chain dataset to identify inefficiencies in **delivery performance**, **inventory management**, and **customer experience**.
+
+The solution is built as an **end-to-end data analytics pipeline**, combining:
+
+* 🐍 Python for data preprocessing
+* 🧮 SQL for advanced analytical queries
+* 📊 Power BI for interactive dashboard visualization
 
 ---
 
 ## 🛠 Tools & Technologies
 
-- **MySQL** – Core database engine for querying and analysis  
-- **Python** – Used for preprocessing and data preparation  
-- **Power BI** – For downstream visualizations 
+* **Python (Pandas, NumPy)** – Data cleaning, preprocessing & EDA
+* **MySQL** – Advanced querying (CTEs, Window Functions, Subqueries)
+* **Power BI** – KPI dashboards & business visualization
 
 ---
 
-## 🎯 Business Goals
+## 📊 Dashboard Preview
 
-- Identify **fast- and slow-moving products** using sales patterns  
-- Detect **late shipments** by product, supplier, and region  
-- Forecast **stock-out risks** and estimate inventory turnover  
-- Rank products and suppliers based on **fulfillment efficiency**  
-- Generate **restocking recommendations** dynamically  
+![Dashboard](dashboard.png)
 
 ---
 
-## 📌 Dataset
+## 🎯 Business Problems Solved
 
-- Source: [Kaggle – Customer Analytics Dataset](https://www.kaggle.com/datasets/prachi13/customer-analytics)  
-- Type: Modified into **relational schema** with normalized tables including:
-  - `orders`, `products`, `customers`, `suppliers`, `inventory`, `shipments`
-
----
-
-## 🧮 Key SQL Concepts Used
-
-- ✅ **Window Functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, `SUM() OVER`)
-- ✅ **CTEs** (including recursive for supplier hierarchies and date generation)
-- ✅ **Correlated and Non-Correlated Subqueries**
-- ✅ **Nested Aggregations**
-- ✅ **Date-Time Functions** for shipping and delay metrics
+* 🚚 Why are deliveries getting delayed?
+* 🏭 Which warehouses are underperforming?
+* 📞 Are customer complaints linked to delays?
+* 💰 Do discounts affect delivery efficiency?
+* 📦 How to optimize inventory and reduce stockouts?
 
 ---
 
-## 📊 Key Business Queries Implemented
+## 📁 Project Structure
 
-1. 🕒 Identify suppliers with low on-time delivery performance (% on-time shipments)
-2. 🐌 List top 5 **slowest-moving SKUs** per category (last 90 days)
-3. 🔁 Monthly **inventory turnover ratio** per warehouse using `SUM() OVER`
-4. 🚨 Detect products at **stock-out risk** in the next 7 days (based on sales trends)
-5. 📉 30-day **rolling sales & returns report** per product
-6. 🔄 Segment customers who **frequently cancel or return** products
-7. 📦 **Restocking recommendation engine** 
+```
+supply-chain-analytics-dashboard/
+│
+├── data/
+├── notebooks/
+│   └── supply_chain_analysis.ipynb
+│
+├── sql/
+│   └── queries.sql
+│
+├── dashboard/
+│   └── dashboard.png
+│
+├── README.md
+```
 
+---
 
+## 🐍 Data Processing (Python)
 
+* Cleaned and preprocessed raw dataset using Pandas
+* Handled missing values and inconsistent formats
+* Performed Exploratory Data Analysis (EDA)
+* Prepared structured dataset for SQL and Power BI
 
+📌 Notebook: `notebooks/supply_chain_analysis.ipynb`
 
+---
 
+## 🧮 SQL Analysis
+
+### Key Concepts Used:
+
+* Window Functions (`RANK()`, `LAG()`, `LEAD()`, `SUM() OVER`)
+* CTEs (including recursive queries)
+* Subqueries & Nested Aggregations
+* Date-time functions for delay analysis
+
+### Key Queries Implemented:
+
+1. Supplier on-time delivery performance
+2. Slow-moving product detection
+3. Inventory turnover calculation
+4. Stock-out risk prediction
+5. Rolling sales analysis
+6. Customer behavior segmentation
+7. Restocking recommendation system
+
+📌 SQL File: `sql/queries.sql`
+
+---
+
+## 📈 Key KPIs
+
+* On-Time Delivery Rate
+* Average Customer Rating
+* Average Customer Care Calls
+
+---
+
+## 📊 Key Insights
+
+### 🚚 Shipment Analysis
+
+* Flight shipments show higher delay rates compared to road transport
+
+### 🏭 Warehouse Performance
+
+* Certain warehouses consistently underperform in delivery timelines
+
+### 📞 Customer Behavior
+
+* Higher customer care calls are strongly linked with delayed deliveries
+
+### 💰 Discount Impact
+
+* High discount orders tend to have increased delivery delays
+
+---
+
+## 💡 Business Recommendations
+
+* Optimize logistics for high-discount orders
+* Improve efficiency in underperforming warehouses
+* Reduce dependency on slower shipment modes
+* Strengthen customer support for high-risk deliveries
+
+---
+
+## 🚀 Conclusion
+
+This project demonstrates how **data-driven decision-making** can improve supply chain efficiency, reduce delivery delays, and enhance customer satisfaction.
+
+It highlights the ability to build a complete analytics pipeline from **data processing → SQL modeling → business visualization**.
