@@ -22,7 +22,7 @@ The solution is built as an **end-to-end data analytics pipeline**, combining:
 
 ## 📊 Dashboard Preview
 
-![Dashboard](dashboard.png)
+![Dashboard](dashboard/dashboard.png)
 
 ---
 
