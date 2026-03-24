@@ -2,13 +2,15 @@
 
 ## 🧠 Project Overview
 
-This project analyzes a global supply chain dataset to identify inefficiencies in **delivery performance**, **inventory management**, and **customer experience**.
+Designed and developed an end-to-end **Supply Chain Analytics System** to identify inefficiencies in delivery operations, warehouse performance, and customer experience.
 
-The solution is built as an **end-to-end data analytics pipeline**, combining:
+This project leverages **data-driven decision making** to optimize logistics, reduce delays, and improve overall operational efficiency.
 
-* 🐍 Python for data preprocessing
-* 🧮 SQL for advanced analytical queries
-* 📊 Power BI for interactive dashboard visualization
+The solution integrates:
+
+* 🐍 Python for data preprocessing & EDA
+* 🧮 SQL for advanced analytics and business logic
+* 📊 Power BI for interactive dashboards and KPI tracking
 
 ---
 
@@ -28,11 +30,11 @@ The solution is built as an **end-to-end data analytics pipeline**, combining:
 
 ## 🎯 Business Problems Solved
 
-* 🚚 Why are deliveries getting delayed?
-* 🏭 Which warehouses are underperforming?
-* 📞 Are customer complaints linked to delays?
-* 💰 Do discounts affect delivery efficiency?
-* 📦 How to optimize inventory and reduce stockouts?
+* 🚚 Identify root causes of delivery delays
+* 🏭 Evaluate warehouse performance inefficiencies
+* 📞 Analyze customer complaints and service quality
+* 💰 Measure impact of discount strategies on logistics
+* 📦 Optimize inventory and reduce stockout risks
 
 ---
 
@@ -58,9 +60,9 @@ supply-chain-analytics-dashboard/
 
 ## 🐍 Data Processing (Python)
 
-* Cleaned and preprocessed raw dataset using Pandas
+* Cleaned and transformed raw dataset using Pandas
 * Handled missing values and inconsistent formats
-* Performed Exploratory Data Analysis (EDA)
+* Performed exploratory data analysis (EDA)
 * Prepared structured dataset for SQL and Power BI
 
 📌 Notebook: `notebooks/supply_chain_analysis.ipynb`
@@ -72,19 +74,19 @@ supply-chain-analytics-dashboard/
 ### Key Concepts Used:
 
 * Window Functions (`RANK()`, `LAG()`, `LEAD()`, `SUM() OVER`)
-* CTEs (including recursive queries)
+* Common Table Expressions (CTEs)
 * Subqueries & Nested Aggregations
-* Date-time functions for delay analysis
+* Date-time functions for delay tracking
 
 ### Key Queries Implemented:
 
-1. Supplier on-time delivery performance
-2. Slow-moving product detection
-3. Inventory turnover calculation
+1. Supplier on-time delivery performance analysis
+2. Identification of slow-moving products
+3. Inventory turnover ratio calculation
 4. Stock-out risk prediction
-5. Rolling sales analysis
-6. Customer behavior segmentation
-7. Restocking recommendation system
+5. Rolling sales trend analysis
+6. Customer segmentation based on behavior
+7. Dynamic restocking recommendation system
 
 📌 SQL File: `sql/queries.sql`
 
@@ -92,9 +94,9 @@ supply-chain-analytics-dashboard/
 
 ## 📈 Key KPIs
 
-* On-Time Delivery Rate
-* Average Customer Rating
-* Average Customer Care Calls
+* 📊 On-Time Delivery Rate (~60%)
+* ⭐ Average Customer Rating (~3.0)
+* 📞 Average Customer Care Calls
 
 ---
 
@@ -102,33 +104,38 @@ supply-chain-analytics-dashboard/
 
 ### 🚚 Shipment Analysis
 
-* Flight shipments show higher delay rates compared to road transport
+* Air/Flight shipments exhibit higher delay rates compared to road transport
 
 ### 🏭 Warehouse Performance
 
-* Certain warehouses consistently underperform in delivery timelines
+* Certain warehouses consistently underperform, indicating operational bottlenecks
 
 ### 📞 Customer Behavior
 
-* Higher customer care calls are strongly linked with delayed deliveries
+* Increased customer care calls strongly correlate with delayed deliveries
 
 ### 💰 Discount Impact
 
-* High discount orders tend to have increased delivery delays
+* High discount campaigns are associated with increased delivery delays, indicating operational strain
 
 ---
 
 ## 💡 Business Recommendations
 
-* Optimize logistics for high-discount orders
+* Optimize logistics handling for high-discount orders
 * Improve efficiency in underperforming warehouses
 * Reduce dependency on slower shipment modes
-* Strengthen customer support for high-risk deliveries
+* Strengthen proactive customer support for high-risk deliveries
 
 ---
 
 ## 🚀 Conclusion
 
-This project demonstrates how **data-driven decision-making** can improve supply chain efficiency, reduce delivery delays, and enhance customer satisfaction.
+This project demonstrates the ability to build a complete **data analytics pipeline** and translate raw data into actionable business insights.
 
-It highlights the ability to build a complete analytics pipeline from **data processing → SQL modeling → business visualization**.
+It highlights strong capabilities in:
+
+* Data processing
+* SQL-based analytics
+* Dashboard storytelling
+* Business decision support
