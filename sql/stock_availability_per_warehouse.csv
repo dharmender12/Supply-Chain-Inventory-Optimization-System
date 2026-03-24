@@ -1,0 +1,6 @@
+Warehouse_block,avg_daily_demand,forecast_30day_demand,assumed_current_stock,stock_status
+D,3.60,108,50,"At Risk of Stock-Out"
+F,3.55,106,50,"At Risk of Stock-Out"
+A,3.58,107,50,"At Risk of Stock-Out"
+B,3.58,107,50,"At Risk of Stock-Out"
+C,3.55,107,50,"At Risk of Stock-Out"
